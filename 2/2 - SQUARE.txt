@@ -1,0 +1,14 @@
+const express = require("express");
+const app = express();
+
+app.get("/add/:num1", function(req, res) 
+{
+  const num1 = req.params.num1;
+  const result = num1 * num1;
+  res.send( "ANS=" + result);
+});
+
+
+app.listen(3000, () =>
+console.log("http://localhost:3000/add/3")
+);

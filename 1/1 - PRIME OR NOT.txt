@@ -1,0 +1,21 @@
+const express = require("express");
+const app = express();
+
+app.get("/convert", (req, res) => {
+  const n = Number(req.query.num);
+  let prime = true;
+
+
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) {
+      prime = false;
+      break;
+    }
+  }
+
+  res.send("converted string is : " + (prime ? "Prime" : "Not Prime"));
+});
+
+app.listen(3000, () =>
+  console.log("http://localhost:3000/convert?num=7")
+);

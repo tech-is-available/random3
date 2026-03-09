@@ -1,0 +1,44 @@
+const express = require("express");
+const app = express();
+
+app.get("/add",(req,res) =>
+{
+const num1 = Number(req.query.num1);
+const num2 = Number(req.query.num2);
+const result = num1 + num2;
+res.send("res=" + result)
+});
+
+app.get("/sub",(req,res) =>
+{
+const num1 = Number(req.query.num1);
+const num2 = Number(req.query.num2);
+const result = num1 - num2;
+res.send("res=" + result)
+});
+
+app.get("/mul",(req,res) =>
+{
+const num1 = Number(req.query.num1);
+const num2 = Number(req.query.num2);
+const result = num1 * num2;
+res.send("res=" + result)
+});
+
+app.get("/div",(req,res) =>
+{
+const num1 = Number(req.query.num1);
+const num2 = Number(req.query.num2);
+const result = num1 / num2;
+res.send("res=" + result)
+});
+
+app.listen(3000,() =>
+{
+console.log("http://localhost:3000/add?num1=4&num2=5");
+console.log("http://localhost:3000/sub?num1=8&num2=5");
+console.log("http://localhost:3000/mul?num1=3&num2=4");
+console.log("http://localhost:3000/div?num1=10&num2=2");
+}
+);
+

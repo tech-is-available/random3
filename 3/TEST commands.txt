@@ -1,0 +1,6 @@
+insert into product values("snacks",10,'2026-05-05')
+
+update product set quantity=5 where name="snacks"
+
+delete from product where name="snacks"
+

@@ -1,0 +1,22 @@
+const express = require("express");
+const app = express();
+
+app.get("/bigger",(req,res) =>
+{
+const num1 = Number(req.query.num1);
+const num2 = Number(req.query.num2);
+
+if (num1 > num2)
+{
+res.send("The first number is bigger")
+}
+else
+{
+res.send("The second number is bigger")
+}
+});
+
+
+app.listen(3000,() =>
+console.log("http://localhost:3000/bigger?num1=4&num2=5")
+);

@@ -1,0 +1,5 @@
+create database test;
+
+create table student(name varchar(50), age int, phone bigint, subject varchar(50));
+
+select * from employee;

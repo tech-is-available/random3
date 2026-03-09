@@ -1,0 +1,15 @@
+const express = require ("express");
+const app = express();
+
+app.get("/mul",(req,res) =>
+{
+const num1 = Number(req.query.num1);
+const num2 = Number(req.query.num2);
+const result = num1 * num2;
+
+res.send("Result=" + result);
+});
+
+app.listen(3000,() =>
+console.log("http://localhost:3000/mul?num1=5&num2=4")
+);

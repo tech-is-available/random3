@@ -1,0 +1,14 @@
+const express = require("express");
+const app = express();
+
+app.get("/cube",(req,res) =>
+{
+const num1 = Number(req.query.num1);
+const result = num1 * num1 * num1;
+res.send("Result=" + result)
+});
+
+
+app.listen(3000,() =>
+console.log("http://localhost:3000/cube?num1=4")
+);

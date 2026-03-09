@@ -1,0 +1,14 @@
+const express = require("express");
+const app = express();
+
+app.get("/convert", (req, res) => 
+{
+  const amount = Number(req.query.amount);
+  const result = amount / 75;
+  res.send("converted string is : " + result);
+});
+
+
+app.listen(3000, () =>
+console.log("http://localhost:3000/convert?amount=200000&to=USD")
+);
